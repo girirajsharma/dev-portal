@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: users-directory
+  labels:
+    app: users-directory
+    type: backend
+spec:
+  containers:
+    - name: users-directory
+      imagePullPolicy: IfNotPresent
+      image: users-directory:1.0

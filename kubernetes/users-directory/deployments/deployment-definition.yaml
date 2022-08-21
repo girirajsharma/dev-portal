@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-directory
+  labels:
+    app: users-directory
+    type: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: users-directory
+  template:
+    metadata:
+      labels:
+        app: users-directory
+    spec:
+      containers:
+        - name: users-directory
+          imagePullPolicy: IfNotPresent
+          image: users-directory:1.0
